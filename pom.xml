@@ -18,6 +18,12 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
+
+	<build>
+        <defaultGoal>install</defaultGoal>
+        <!-- Source directory configuration -->
+        <sourceDirectory>src</sourceDirectory>
+	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
