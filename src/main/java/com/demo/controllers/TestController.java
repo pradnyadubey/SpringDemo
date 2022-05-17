@@ -9,16 +9,16 @@ import com.demo.model.Employee;
 
 @SpringBootApplication
 @RestController
-public class TestController {
+public class TestControllerTest {
 
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public Employee firstPage() {
 
 		Employee emp = new Employee();
 		emp.setName("Pradnya");
-		emp.setDesignation("software engineer");
+		emp.setDesignation("manager");
 		emp.setEmpId("1");
-		emp.setSalary(25000000);
+		emp.setSalary(30000000);
 
 		return emp;
 	}

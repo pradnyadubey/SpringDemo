@@ -16,7 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestWebApp extends SpringDemo {
+public class TestWebAppTest extends SpringDemo {
 
 	@Autowired
 	private WebApplicationContext webApplicationContext;
