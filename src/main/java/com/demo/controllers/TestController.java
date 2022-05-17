@@ -9,7 +9,7 @@ import com.demo.model.Employee;
 
 @SpringBootApplication
 @RestController
-public class TestControllerTest {
+public class TestController {
 
 	@RequestMapping(value = "/employee", method = RequestMethod.GET)
 	public Employee firstPage() {
