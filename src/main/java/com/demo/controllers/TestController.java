@@ -15,10 +15,10 @@ public class TestController {
 	public Employee firstPage() {
 
 		Employee emp = new Employee();
-		emp.setName("emp1");
-		emp.setDesignation("manager");
+		emp.setName("Pradnya");
+		emp.setDesignation("techleader");
 		emp.setEmpId("1");
-		emp.setSalary(2000);
+		emp.setSalary(400000);
 
 		return emp;
 	}
