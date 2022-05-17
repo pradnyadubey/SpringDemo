@@ -16,9 +16,9 @@ public class TestController {
 
 		Employee emp = new Employee();
 		emp.setName("Pradnya");
-		emp.setDesignation("techleader");
+		emp.setDesignation("software engineer");
 		emp.setEmpId("1");
-		emp.setSalary(400000);
+		emp.setSalary(500000);
 
 		return emp;
 	}
