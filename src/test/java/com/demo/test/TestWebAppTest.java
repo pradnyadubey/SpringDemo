@@ -1,41 +1,49 @@
 package com.demo.test;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+
+import com.demo.controllers.TestController;
+import com.demo.model.Employee;
 
 @SpringBootTest
-@AutoConfigureMockMvc
-public class TestWebAppTest extends SpringDemo {
+//@AutoConfigureMockMvc
+public class TestWebAppTest {
 
-	@Autowired
-	private WebApplicationContext webApplicationContext;
+//	@Autowired
+//	private WebApplicationContext webApplicationContext;
+//
+//	@Autowired
+//	private MockMvc mockMvc;
+//
+//	@BeforeEach
+//	public void setup() {
+//		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+//	}
 
-	@Autowired
-	private MockMvc mockMvc;
-
-	@Before
-	public void setup() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+//	@Autowired
+	TestController controller;
+	
+	@BeforeEach
+	private void setup() {
+		controller = new TestController();
 	}
-
+			
 	@Test
-	public void testEmployee() throws Exception {
-		mockMvc.perform(get("/employee")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.name").value("Pradnya")).andExpect(jsonPath("$.designation").value("manager"))
-				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(30000000));
-
+	void testEmployee() throws Exception {
+//		mockMvc.perform(get("/employee")).andExpect(status().isOk())
+//				.andExpect(content().contentType("application/json;charset=UTF-8"))
+//				.andExpect(jsonPath("$.name").value("Pradnya")).andExpect(jsonPath("$.designation").value("manager"))
+//				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(30000000));
+		Employee e  = controller.firstPage();
+		assertEquals(e.getEmpId(), "1");
+		assertEquals(e.getName(), "Pradnya");
+		assertEquals(e.getDesignation(), "manager");
+		assertEquals(e.getSalary(), 30000000);
+		
 	}
 
 }
