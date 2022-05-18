@@ -33,8 +33,8 @@ public class TestWebAppTest extends SpringDemo {
 	public void testEmployee() throws Exception {
 		mockMvc.perform(get("/employee")).andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.name").value("emp1")).andExpect(jsonPath("$.designation").value("manager"))
-				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
+				.andExpect(jsonPath("$.name").value("Pradnya")).andExpect(jsonPath("$.designation").value("manager"))
+				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(30000000));
 
 	}
 
