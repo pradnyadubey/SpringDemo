@@ -41,7 +41,7 @@ public class TestWebAppTest {
 		Employee e  = controller.firstPage();
 		assertEquals(e.getEmpId(), "1");
 		assertEquals(e.getName(), "Pradnya");
-		assertEquals(e.getDesignation(), "manager");
+		assertEquals(e.getDesignation(), "software engineer");
 		assertEquals(e.getSalary(), 30000000);
 		
 	}
